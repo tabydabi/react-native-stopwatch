@@ -41,12 +41,18 @@ export default function App() {
       updateS++;
       updateMs = 0;
     }
-    updateMs++;
+    updateMs += 2;
     return setTime({ms: updateMs, s: updateS, m: updateM, h: updateH});
   };
+
   return (
     <View style={styles.container}>
-      {/* <Progress.Circle progress={time.h} width={200} /> */}
+      <View style={styles.timerProgress}>
+        <Progress.Pie progress={time.h / 24} size={50} />
+        <Progress.Pie progress={time.m / 60} size={50} />
+        <Progress.Pie progress={time.s / 60} size={50} />
+        <Progress.Pie progress={time.ms / 100} size={50} />
+      </View>
       <View style={styles.timer}>
         <Text>{time.h >= 10 ? time.h : '0' + time.h + ' : '}</Text>
         <Text>{time.m >= 10 ? time.m : '0' + time.m + ' : '}</Text>
@@ -73,6 +79,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   button: {
+    flexDirection: 'row',
+  },
+  timerProgress: {
     flexDirection: 'row',
   },
 });
