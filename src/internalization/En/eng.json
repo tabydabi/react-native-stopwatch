@@ -1,0 +1,18 @@
+{
+    "translation":{
+        "Start": "Start",
+        "Stop": "Stop",
+        "Reset": "Reset",
+        "placeholderName": "Name",
+        "placeholderEmail": "Email",
+        "placeholderPassword": "Password",
+        "Submit": "Submit",
+        "NameError": "Name is required",
+        "toDetails": "Go to Details",
+        "toTimer": "Go to Timer",
+        "Home": "Home",
+        "Details": "Details",
+        "Timer": "Timer"
+
+    }
+}

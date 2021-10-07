@@ -7,12 +7,16 @@
  */
 
 import React, {useState} from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
 import * as Progress from 'react-native-progress';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {styles} from './styles';
+import {ButtonB, YourImage} from '../Button/Button';
+import {useTranslation} from 'react-i18next';
+import SwitchSelector from 'react-native-switch-selector';
+import { options } from '../../constant';
 
 export default function Timer() {
+  const {t, i18n} = useTranslation();
   const [time, setTime] = useState({ms: 0, s: 0, m: 0, h: 0});
   const [interv, setInterv] = useState();
   const start = () => {
@@ -49,6 +53,14 @@ export default function Timer() {
 
   return (
     <View style={styles.container}>
+      <SwitchSelector
+        options={options}
+        hasPadding
+        initial={0}
+        onPress={language => {
+          i18n.changeLanguage(language);
+        }}
+      />
       <View style={styles.timerProgress}>
         <Progress.Pie progress={time.h / 24} size={50} />
         <Progress.Pie progress={time.m / 60} size={50} />
@@ -62,28 +74,18 @@ export default function Timer() {
         <Text>{time.ms >= 10 ? time.ms : '0' + time.ms}</Text>
       </View>
       <View style={styles.button}>
-        <Button title="Start" onPress={start} />
-        <Button title="Stop" onPress={stop} />
-        <Button title="End" onPress={reset} />
+        <ButtonB title={t('Start')} onPress={start} />
+        <ButtonB
+          title={t('Stop')}
+          onPress={stop}
+          source={{uri: 'https://unsplash.it/400/400?image=5'}}
+        />
+        <ButtonB
+          title={t('Reset')}
+          onPress={reset}
+          source={{uri: 'https://unsplash.it/400/400?image=5'}}
+        />
       </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  timer: {
-    flexDirection: 'row',
-  },
-  button: {
-    flexDirection: 'row',
-  },
-  timerProgress: {
-    flexDirection: 'row',
-  },
-});

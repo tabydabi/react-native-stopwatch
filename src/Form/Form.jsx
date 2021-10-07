@@ -1,18 +1,12 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  TextInput,
-  Button,
-} from 'react-native';
+import {View, Text, TextInput, Button} from 'react-native';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
+import { useTranslation } from 'react-i18next';
+
 
 export const MyReactNativeForm = () => {
+  const {t, i18n} = useTranslation();
   return (
     <>
       <Text>Sign Up</Text>
@@ -30,7 +24,7 @@ export const MyReactNativeForm = () => {
         }) => (
           <View>
             <TextInput
-              placeholder="Name"
+              placeholder={t('placeholderName')}
               onChangeText={handleChange('name')}
               onBlur={handleBlur('name')}
               value={values.name}
@@ -39,7 +33,7 @@ export const MyReactNativeForm = () => {
               <Text style={{color: 'red'}}>{errors.name}</Text>
             )}
             <TextInput
-              placeholder="Email"
+              placeholder={t('placeholderEmail')}
               onChangeText={handleChange('email')}
               onBlur={handleBlur('email')}
               value={values.email}
@@ -48,7 +42,7 @@ export const MyReactNativeForm = () => {
               <Text style={{color: 'red'}}>{errors.email}</Text>
             )}
             <TextInput
-              placeholder="Password"
+              placeholder={t('placeholderPassword')}
               onChangeText={handleChange('password')}
               onBlur={handleBlur('password')}
               value={values.password}
@@ -57,7 +51,7 @@ export const MyReactNativeForm = () => {
               <Text style={{color: 'red'}}>{errors.password}</Text>
             )}
 
-            <Button onPress={handleSubmit} title="Submit" />
+            <Button onPress={handleSubmit} title='Submit'/>
           </View>
         )}
       </Formik>
@@ -72,22 +66,10 @@ const validationSchema = Yup.object().shape({
     .required('Email is required')
     .label('Email'),
   password: Yup.string()
-    .matches(/\w*[a-z]\w*/, 'Password must have a small letter')
+    .matches(/\w*[a-z]\w*/, `Password must have a small letter`)
     .matches(/\w*[A-Z]\w*/, 'Password must have a capital letter')
     .matches(/\d/, 'Password must have a number')
     .min(8, ({min}) => `Password must be at least ${min} characters`)
     .required('Password is required')
     .label('Password'),
-});
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  loginContainer: {
-    width: '80%',
-    alignItems: 'center',
-  },
 });
