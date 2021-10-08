@@ -4,20 +4,20 @@
         "Stop": "Стоп",
         "Reset": "Сброс",
         "SignUp": "Войти",
-        "placeholderName": "Имя",
-        "placeholderEmail": "Почта",
-        "placeholderPassword": "Пароль",
+        "Name": "Имя",
+        "Email": "Почта",
+        "Password": "Пароль",
         "Submit": "Отправить",
-        "NameError": "Требуется Имя",
-        "toDetails": "К Деталям",
-        "toTimer": "К таймеру",
-        "emailError": "Введите существующую почту",
-        "emailInput": "Введите почту",
-        "passwordInput": "Введите пароль",
-        "passwordMinNumber": "Пароль должен содержать минимум 8 символов",
-        "passwordLittleLetter": "Пароль должен содержать маленькую букву",
-        "passwordBigLetter": "Пароль должен содержать большую букву",
-        "passwordOneNumber": "Пароль должен содержать число"
+        "Name is required": "Требуется Имя",
+        "Go to Details": "К Деталям",
+        "Go to Timer": "К таймеру",
+        "Please enter valid email": "Введите существующую почту",
+        "Email is required": "Введите почту",
+        "Password is required": "Введите пароль",
+        "Password must be at least 8 characters": "Пароль должен содержать минимум 8 символов",
+        "Password must have a small letter": "Пароль должен содержать маленькую букву",
+        "Password must have a capital letter": "Пароль должен содержать большую букву",
+        "Password must have a number": "Пароль должен содержать число"
 
 
         

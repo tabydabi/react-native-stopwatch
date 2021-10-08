@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from '../screen/Home/Home';
-import DetailsScreen from '../screen/Login/Login.';
-import TimerScreen from '../screen/Timer/Timer';
+import HomeScreen from '~/screen/Home';
+import DetailsScreen from '~/screen/Login';
+import TimerScreen from '~/screen/Timer';
 import {useTranslation} from 'react-i18next';
 
 const Stack = createNativeStackNavigator();

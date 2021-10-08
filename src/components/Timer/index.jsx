@@ -10,10 +10,11 @@ import React, {useState, useContext} from 'react';
 import {Text, View} from 'react-native';
 import * as Progress from 'react-native-progress';
 import {styles} from './styles';
-import {ButtonB, YourImage} from '../Button/Button';
+import {ButtonB} from '~/components/Button';
 import {useTranslation} from 'react-i18next';
 import SwitchSelector from 'react-native-switch-selector';
-import {options} from '../../constant';
+import {options} from '~/constant';
+import SwitchLanguage from '~components/SwitchSelector';
 
 export default function Timer() {
   const {t, i18n} = useTranslation();
@@ -53,15 +54,7 @@ export default function Timer() {
   };
 
   return (
-    <View style={styles.container}>
-      <SwitchSelector
-        options={options}
-        hasPadding
-        initial={0}
-        onPress={language => {
-          i18n.changeLanguage(language);
-        }}
-      />
+    <View>
       <View style={styles.timerProgress}>
         <Progress.Pie progress={time.h / 24} size={50} />
         <Progress.Pie progress={time.m / 60} size={50} />

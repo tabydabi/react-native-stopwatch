@@ -1,19 +1,19 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
+  timer: {
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  timer: {
-    flexDirection: 'row',
-  },
   button: {
     flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   timerProgress: {
     flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

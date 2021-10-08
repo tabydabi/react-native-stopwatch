@@ -24,7 +24,7 @@ export const MyReactNativeForm = () => {
         }) => (
           <View>
             <TextInput
-              placeholder={t('placeholderName')}
+              placeholder={t('Name')}
               onChangeText={handleChange('name')}
               onBlur={handleBlur('name')}
               value={values.name}
@@ -33,7 +33,7 @@ export const MyReactNativeForm = () => {
               <Text style={{color: 'red'}}>{t(errors.name)}</Text>
             )}
             <TextInput
-              placeholder={t('placeholderEmail')}
+              placeholder={t('Email')}
               onChangeText={handleChange('email')}
               onBlur={handleBlur('email')}
               value={values.email}
@@ -42,7 +42,7 @@ export const MyReactNativeForm = () => {
               <Text style={{color: 'red'}}>{t(errors.email)}</Text>
             )}
             <TextInput
-              placeholder={t('placeholderPassword')}
+              placeholder={t('Password')}
               onChangeText={handleChange('password')}
               onBlur={handleBlur('password')}
               value={values.password}
@@ -51,7 +51,7 @@ export const MyReactNativeForm = () => {
               <Text style={{color: 'red'}}>{t(errors.password)}</Text>
             )}
 
-            <Button onPress={handleSubmit} title='Submit'/>
+            <Button onPress={handleSubmit} title={t('Submit')}/>
           </View>
         )}
       </Formik>
@@ -60,16 +60,16 @@ export const MyReactNativeForm = () => {
 };
 
 const validationSchema = Yup.object().shape({
-  name: Yup.string().required('NameError').label('Name'),
+  name: Yup.string().required('Name is required').label('Name'),
   email: Yup.string()
-    .email('emailError')
-    .required('emailInput')
+    .email('Please enter valid email')
+    .required('Email is required')
     .label('Email'),
   password: Yup.string()
-    .matches(/\w*[a-z]\w*/, `passwordLittleLetter`)
-    .matches(/\w*[A-Z]\w*/, 'passwordBigLetter')
-    .matches(/\d/, 'passwordOneNumber')
-    .min(8, ({min}) => `passwordMinNumber`)
-    .required('passwordInput')
+    .matches(/\w*[a-z]\w*/, `Password must have a small letter`)
+    .matches(/\w*[A-Z]\w*/, 'Password must have a capital letter')
+    .matches(/\d/, 'Password must have a number')
+    .min(8, ({min}) => `Password must be at least 8 characters`)
+    .required('Password is required')
     .label('Password'),
 });
