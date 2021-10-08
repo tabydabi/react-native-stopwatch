@@ -1,0 +1,26 @@
+{
+    "translation":{
+        "Start": "Start",
+        "Stop": "Stop",
+        "Reset": "Reset",
+        "SignUp": "Sign Up",
+        "placeholderName": "Name",
+        "placeholderEmail": "Email",
+        "placeholderPassword": "Password",
+        "Submit": "Submit",
+        "NameError": "Name is required",
+        "toDetails": "Go to Details",
+        "toTimer": "Go to Timer",
+        "Home": "Home",
+        "Details": "Details",
+        "Timer": "Timer",
+        "emailError": "Please enter valid email",
+        "emailInput": "Email is required",
+        "passwordInput": "Password is required",
+        "passwordMinNumber": "Password must be at least 8 characters",
+        "passwordLittleLetter": "Password must have a small letter",
+        "passwordBigLetter": "Password must have a capital letter",
+        "passwordOneNumber": "Password must have a number",
+
+    },
+}

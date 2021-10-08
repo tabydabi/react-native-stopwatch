@@ -1,0 +1,25 @@
+{
+    "translation":{
+        "Start": "Старт",
+        "Stop": "Стоп",
+        "Reset": "Сброс",
+        "SignUp": "Войти",
+        "placeholderName": "Имя",
+        "placeholderEmail": "Почта",
+        "placeholderPassword": "Пароль",
+        "Submit": "Отправить",
+        "NameError": "Требуется Имя",
+        "toDetails": "К Деталям",
+        "toTimer": "К таймеру",
+        "emailError": "Введите существующую почту",
+        "emailInput": "Введите почту",
+        "passwordInput": "Введите пароль",
+        "passwordMinNumber": "Пароль должен содержать минимум 8 символов",
+        "passwordLittleLetter": "Пароль должен содержать маленькую букву",
+        "passwordBigLetter": "Пароль должен содержать большую букву",
+        "passwordOneNumber": "Пароль должен содержать число"
+
+
+        
+    }
+}

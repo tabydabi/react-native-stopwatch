@@ -6,19 +6,20 @@
  * @flow strict-local
  */
 
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {Text, View} from 'react-native';
 import * as Progress from 'react-native-progress';
 import {styles} from './styles';
 import {ButtonB, YourImage} from '../Button/Button';
 import {useTranslation} from 'react-i18next';
 import SwitchSelector from 'react-native-switch-selector';
-import { options } from '../../constant';
+import {options} from '../../constant';
 
 export default function Timer() {
   const {t, i18n} = useTranslation();
   const [time, setTime] = useState({ms: 0, s: 0, m: 0, h: 0});
   const [interv, setInterv] = useState();
+
   const start = () => {
     run();
     setInterv(setInterval(run, 10));
